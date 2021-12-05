@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moviereviewpredictions</title>
+</head>
+<body>
+{% comment %} <img src="https://source.unsplash.com/1300x500/?cinema,movie,netflix" class="img-fluid" alt="Responsive image"> {% endcomment %}
+<h1>Movie Review prediction</h1><br>
+<p>Maybe you’re interested in knowing whether movie reviews are positive or negative, companies use sentiment analysis in a variety of settings, 
+particularly for marketing purposes. Uses include social media monitoring, brand monitoring, customer feedback, 
+customer service and market research (“Sentiment Analysis”).From the below button you can predict whether your review is positive or not. </P>
+<p>Here I created a Deep learning network using RNN.I used Imdb Dataset for trainig the model</p>
+<h3>What is Sentiment Analysis</h3>
+<p>Sentiment analysis (or opinion mining) is a natural language processing technique used to determine whether 
+data is positive, negative or neutral. Sentiment analysis is often performed on textual data to help businesses 
+monitor brand and product sentiment in customer feedback, and understand customer needs.</p>
+<form action="{% url 'result' %}",method="get">
+{% csrf_token %}
+  <div class="form-group">
+    <label for="Review">Review</label><br>
+    <input type="text" id="Review" name="Review"><br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+</body>
+<style>
+h1 {
+    color: #560a0a;
+    font-family: Helvetica, 'Open Sans', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    margin-block: revert;
+}
+.form-group{
+    text-align:center;
+    font-size: 40px;
+    color: #560a0a;
+    font-weight: bold;
+}
+button{
+    text-align:center;
+    font-size: 40px;
+    color: #560a0a;
+    font-weight: bold;
+}
+input[type="text"]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+p{
+    color: hsl(230deg 90% 15%);
+    font-style: oblique;
+    margin: auto;
+}
+h3{
+    font-size: 30px;
+    color: #560a0a;
+    margin-bottom:3px;
+}
+</style>
